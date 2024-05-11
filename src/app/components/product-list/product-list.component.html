@@ -1,0 +1,8 @@
+<section>
+  @for(producto of productos; track $index) {
+    <product-item [producto]=producto/>
+  }
+  @for(item of cartController.cart.productos; track $index) {
+    {{ item.nombre }}
+  }
+</section>
