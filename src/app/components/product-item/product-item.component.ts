@@ -15,8 +15,8 @@ export class ProductItemComponent {
 
   public cartController: CartController = inject(CartController);
 
-  addProductToCart(producto?: Producto) {
-    this.cartController.addToCart({nombre: "dsa", descripcion: "dsuads", img: "dsa", precio: 100});
+  addProductToCart(producto: Producto) {
+    this.cartController.addToCart(producto);
   }
 }
 
