@@ -1,12 +1,8 @@
 <nav>
-  <header> Title </header>
+  <header> <a href="/"> Title </a> </header>
   <ul>
-    <li> About Us </li>
-    <li> Info </li>
+    <li> <a href="/questions" > Cuestionario </a> </li>
+    <li> <a href="/productos"> Productos </a> </li>
     <li> <a href="#" (click)="showDialog = !showDialog"> Cart </a> </li>
   </ul>
 </nav>
-
-<cart-list [(visible)]="showDialog">
-  <button> (click)="showDialog = !showDialog"> Close </button>
-</cart-list>

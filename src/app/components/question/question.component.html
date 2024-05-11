@@ -1,0 +1,10 @@
+<div>
+  <h1> {{ pregunta.palabra }} </h1>
+  <div>
+    @for(opcion of pregunta.opciones; track $index) {
+      {{ opcion.descripcion }}
+    }
+  </div>
+  {{ currentQuestionIndex }}
+  <button (click)="nextQuestion()"> Next </button>
+</div>
