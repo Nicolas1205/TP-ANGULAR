@@ -1,5 +1,6 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { CartListComponent } from '../cart/cart-list.component';
+import { CartController } from '../../controller/cart.controller';
 
 @Component({
   selector: 'navbar',
@@ -9,6 +10,6 @@ import { CartListComponent } from '../cart/cart-list.component';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  showDialog: boolean = false;
+  public cartService = inject(CartController);
 }
 

@@ -1,8 +1,50 @@
 <nav>
-  <header> <a href="/"> Title </a> </header>
+  <header><a href="/"> Title </a></header>
   <ul>
-    <li> <a href="/questions" > Cuestionario </a> </li>
-    <li> <a href="/productos"> Productos </a> </li>
-    <li> <a href="#" (click)="showDialog = !showDialog"> Cart </a> </li>
+    <li><a href="/questions"> Cuestionario </a></li>
+    <li><a href="/productos"> Productos </a></li>
+    <li>
+      <button
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        style="background-color: white;"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-cart"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+          />
+        </svg>
+      </button>
+    </li>
   </ul>
 </nav>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Lista de Articulos</h5>
+      </div>
+      <div class="modal-body">
+        @for(producto of cartService.getProductos(); track $index) {
+        <div>{{ producto.nombre }}</div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

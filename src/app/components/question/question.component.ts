@@ -10,10 +10,10 @@ import { Pregunta } from '../../model/Pregunta';
 })
 export class QuestionComponent {
   @Input() pregunta!: Pregunta ;
-  @Input() currentQuestionIndex!: Object;
+  //@Input() currentQuestionIndex!: Object;
 
   nextQuestion() {
-    this.currentQuestionIndex++;
+    //this.currentQuestionIndex
   }
 }
 
