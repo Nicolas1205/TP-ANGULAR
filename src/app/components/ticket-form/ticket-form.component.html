@@ -1,0 +1,24 @@
+<form>
+  <div class="form-group">
+    <label for="dni">DNI</label>
+    <input type="text" class="form-control" [(ngModel)]="ticket.dni" name="dni">
+    <label for="precio">Precio Real</label>
+    <input type="number" class="form-control" [(ngModel)]="ticket.precioReal" name="precio" >
+    <label for="fechaCobro">Fecha Cobro</label>
+    <input type="text" class="form-control" [(ngModel)]="ticket.fechaCobro" name="fechaCobro" placeholder="dd/mm/yy">
+  </div>
+  <div class="form-group">
+    <label for="expectador">Tipo de Expectador</label>
+    <select class="form-control" id="expectador" (change)="onChangeExpectador()" [(ngModel)]="ticket.expectador" name="expectador">
+      @for(expectador of expectadores; track $index) {
+      <option [ngValue]="expectador"> {{ expectador }} </option>
+      }
+    </select>
+  </div>
+
+  @if(ticket.precioReal && ticket.expectador) {
+    Precio a Cobrar: {{ticket.precioCobrado}}  
+  } @else {
+    No se puede generar el precio 
+  }
+</form>
